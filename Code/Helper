@@ -1,0 +1,33 @@
+Core Application & Windows
+QApplication: Manages the GUI application's control flow and main settings. Every PySide application must have exactly one instance of this class.
+
+QMainWindow: Provides a main application window with built-in support for a menu bar, toolbars, dock widgets, and a status bar.
+
+QWidget: The base class of all user interface objects. It can serve as a top-level window or as a blank container for organizing other widgets.
+
+Basic Widgets (Interactive Elements)
+QPushButton: A standard command button that the user can click to trigger a specific action.
+
+QLabel: A widget used to display non-editable text, numbers, or images.
+
+QLineEdit: A widget that allows the user to enter and edit a single line of plain text.
+
+QTextEdit: A widget used for entering and editing multi-line rich text or plain text.
+
+Layout Management
+QVBoxLayout: Lines up widgets vertically, stacking them from top to bottom.
+
+QHBoxLayout: Lines up widgets horizontally, placing them side by side from left to right.
+
+QGridLayout: Lays out widgets in a two-dimensional grid composed of rows and columns.
+
+Essential Methods
+show(): Displays the widget and all of its child elements on the screen. By default, widgets are created hidden.
+
+connect(): Links a specific signal (such as a button click or text change) to a function (called a slot). When the signal is emitted, the connected function automatically executes.
+
+setText(text): Changes the text displayed on a widget, such as a QLabel or QPushButton.
+
+text(): Retrieves the current text contained within a widget, typically used with QLineEdit to get user input.
+
+app.exec(): Enters the main event loop. This keeps the application running and listening for user interactions until the window is closed.
