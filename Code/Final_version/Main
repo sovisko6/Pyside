@@ -1,0 +1,63 @@
+import sys
+from PySide6.QtWidgets import (QMainWindow, QWidget, QStackedWidget,
+                               QVBoxLayout, QGridLayout, QPushButton, QLabel)
+from PySide6.QtCore import Qt
+from Tlacitko import Tlacitko
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Počítadlo životů")
+        self.resize(400, 500)
+
+        self.balicek_obrazovek = QStackedWidget()
+        self.setCentralWidget(self.balicek_obrazovek)
+        self.menu()
+
+    def menu(self):
+        menu_widget = QWidget()
+        layout = QVBoxLayout()
+        layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        
+        nadpis = QLabel("Kolik hráčů bude hrát?")
+        nadpis.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(nadpis)
+ 
+        for pocet in [2, 4, 6]:
+            btn = QPushButton(f"{pocet} Hráči")
+            btn.setStyleSheet("font-size: 38px; padding: 10px; margin: 5px;")
+            btn.clicked.connect(lambda checked, p=pocet: self.spust_hru(p))
+            layout.addWidget(btn)
+        
+        menu_widget.setLayout(layout)
+        self.balicek_obrazovek.addWidget(menu_widget)
+
+    def spust_hru(self, pocet_h):
+        self.hra_widget = QWidget()
+        hlavni_layout = QVBoxLayout()
+       
+        mrizka = QGridLayout()
+        mrizka.setSpacing(10)
+        seznam_barev = ["#d9534f", "#5cb85c", "#0275d8", "#f0ad4e", "#9c27b0", "#00bcd4"]
+
+        for i in range(pocet_h):
+            novy_blok = Tlacitko(barva = seznam_barev[i], pocet_hracu = pocet_h)
+            radek = i // 2   
+            sloupec = i % 2  
+            mrizka.addWidget(novy_blok, radek, sloupec)
+
+        hlavni_layout.addLayout(mrizka)
+
+        btn_zpet = QPushButton("Zpět do menu")
+        btn_zpet.clicked.connect(self.zpet_do_menu)
+        hlavni_layout.addWidget(btn_zpet)
+        
+        self.hra_widget.setLayout(hlavni_layout)
+        self.balicek_obrazovek.addWidget(self.hra_widget)
+        self.balicek_obrazovek.setCurrentWidget(self.hra_widget)
+
+    def zpet_do_menu(self):
+        self.balicek_obrazovek.setCurrentIndex(0)
+        self.balicek_obrazovek.removeWidget(self.hra_widget)
+        self.hra_widget.deleteLater()
