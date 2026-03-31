@@ -1,1 +1,98 @@
-Fina
+from PySide6.QtWidgets import (QApplication, QWidget, QHBoxLayout, QVBoxLayout, 
+                               QPushButton, QLineEdit, QMenu, QSizePolicy)
+from PySide6.QtGui import QIntValidator
+from PySide6.QtCore import Qt
+import sys
+
+class Tlacitko(QWidget):
+    def __init__(self, barva="gray", pocet_hracu=2):
+        super().__init__()
+        self.setWindowTitle("Nové Počítadlo")
+
+        self.setObjectName("HlavniPozadi")
+        
+        self.i = 20 if pocet_hracu == 2 else 40
+
+        self.pocitadlo_vstup = QLineEdit(str(self.i))
+        self.pocitadlo_vstup.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.pocitadlo_vstup.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.pocitadlo_vstup.setValidator(QIntValidator(-999, 999, self)) 
+        self.pocitadlo_vstup.textChanged.connect(self.aktualizuj_z_textu)
+
+
+        self.btn_plus = QPushButton("+")
+        self.btn_minus = QPushButton("-")
+        self.btn_menu = QPushButton("Barva")
+        
+        self.btn_plus.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.btn_minus.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.btn_menu.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+
+        self.btn_plus.clicked.connect(self.zmacknutiup)
+        self.btn_minus.clicked.connect(self.zmacknutidown)
+
+        menu = QMenu(self) 
+        menu.addAction("Červená", lambda *args: self.zmen_barvu("#8b0000"))
+        menu.addAction("Modrá", lambda *args: self.zmen_barvu("#00008b"))
+        menu.addAction("Zelená", lambda *args: self.zmen_barvu("#006400"))
+        menu.addAction("Šedá", lambda *args: self.zmen_barvu("gray"))
+        
+        self.btn_menu.setMenu(menu)
+        pravy_layout = QVBoxLayout()
+        pravy_layout.setContentsMargins(0, 0, 0, 0)
+        pravy_layout.setSpacing(5)
+        pravy_layout.addWidget(self.btn_plus)
+        pravy_layout.addWidget(self.btn_minus)
+        pravy_layout.addWidget(self.btn_menu)
+        hlavni_layout = QHBoxLayout()
+        hlavni_layout.addWidget(self.pocitadlo_vstup, 7) 
+        hlavni_layout.addLayout(pravy_layout, 3)         
+
+        self.setLayout(hlavni_layout)
+
+        self.zmen_barvu(barva)
+
+    def aktualizuj_z_textu(self, text):
+        if text == "" or text == "-":
+            return
+        self.i = int(text)
+
+    def zmacknutiup(self):
+        self.i += 1
+        self.pocitadlo_vstup.setText(str(self.i))
+
+    def zmacknutidown(self):
+        self.i -= 1
+        self.pocitadlo_vstup.setText(str(self.i))
+
+    def zmen_barvu(self, barva):
+        self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
+        
+        self.setStyleSheet(f"""
+            #HlavniPozadi {{
+                background-color: {barva};
+            }}
+            QLineEdit {{
+                background-color: rgba(255, 255, 255, 220);
+                color: black;
+                font-size: 70px;
+                font-weight: bold;
+                border: 2px solid black;
+                border-radius: 10px;
+            }}
+            QPushButton {{
+                background-color: rgba(255, 255, 255, 220);
+                color: black;
+                font-size: 24px;
+                font-weight: bold;
+                border: 2px solid black;
+                border-radius: 5px;
+            }}
+        """)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = Tlacitko()
+    okno.resize(500, 250)
+    okno.show()
+    sys.exit(app.exec())
