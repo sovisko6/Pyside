@@ -1,0 +1,19 @@
+QGridLayout: A layout manager that arranges widgets in a grid of rows and columns.
+
+Tlacitko: Imports your custom button/widget class from the Tlacitko.py file to be used as player blocks.
+
+hra_widget & QVBoxLayout: Creates a new screen container and a vertical master layout to hold the grid and the "Back" button.
+
+QGridLayout: Initializes a grid to organize player counters side-by-side.
+
+seznam_barev: A predefined list of hex codes used to give each player a unique background color.
+
+for i in range(pocet_h):
+
+Creates a new instance of Tlacitko for each player.
+
+radek = i // 2 & sloupec = i % 2: Mathematical floor division and modulo used to arrange widgets into a 2-column layout automatically.
+
+btn_zpet.clicked: Connects the "Back" button to a function that returns the user to the main menu.
+
+setCurrentWidget: Switches the QStackedWidget view from the menu to the newly created game screen.
