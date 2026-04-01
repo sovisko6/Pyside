@@ -1,0 +1,23 @@
+Step-by-Step Guide: Creating and Using a Python venv
+Follow these steps to set up a clean workspace for your Python project.
+
+1. Create the Environment
+Open your terminal in your project folder and run the following command. This creates a folder named venv that will hold all your local libraries.
+command: python -m venv venv
+
+2. Activate the Environment
+You must "enter" the environment every time you start a new terminal session.
+
+Windows (PowerShell): .\venv\Scripts\Activate.ps1
+
+macOS / Linux: source venv/bin/activate
+
+3. Install Your Tools
+Now that you see (venv) in your terminal, any library you install stays inside this project.
+command: pip install PySide6
+
+4. Leave the Environment
+When you are done working, just type:
+
+Bash
+deactivate
