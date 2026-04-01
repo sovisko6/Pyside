@@ -1,8 +1,10 @@
 Task Summary: Logic Implementation & Data Validation
 1. Input Validation & Security
-QIntValidator: You implemented a safety layer that restricts user input to integers between -999 and 999. This prevents the application from crashing if a user tries to type letters or symbols.
+QIntValidator: You implemented a safety layer that restricts user input to integers between -999 and 999. 
+This prevents the application from crashing if a user tries to type letters or symbols.
 
-Error Handling: In aktualizuj_z_textu, you added a check for empty strings or a lone minus sign (-). This is a crucial "fail-safe" that prevents ValueError crashes during the conversion from string to integer.
+Error Handling: In aktualizuj_z_textu, you added a check for empty strings or a lone minus sign (-).
+This is a crucial "fail-safe" that prevents ValueError crashes during the conversion from string to integer.
 
 2. Signal & Slot Connectivity
 You utilized the core Qt mechanism to bridge the UI and the logic:
