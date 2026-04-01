@@ -1,0 +1,6 @@
+setCurrentIndex(0): Switches the QStackedWidget view back to the very first page (index 0), which is your main menu.
+
+removeWidget: Detaches the active game screen (self.hra_widget) from the stack so that old games don't pile up in the background.
+
+deleteLater(): Safely tells Qt to destroy the widget and free up system memory once the current event loop finishes, 
+preventing memory leaks when users repeatedly start and leave games.
