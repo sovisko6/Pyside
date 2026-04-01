@@ -1,0 +1,24 @@
+Task: Dynamic Game Board & Screen Management
+Import Custom Components (from Tlacitko import Tlacitko)
+
+Description: Linked the main application with your previously created module. This allows for code reusability—you instantiate the exact same counter logic (Tlacitko) as many times as needed within the app.
+
+Implement Grid Layout (QGridLayout)
+
+Description: Utilized a grid system to organize the players' UI. A grid allows elements to be arranged in rows and columns, making it the ideal choice for displaying multiple counters side-by-side (e.g., in a 2x2 or 3x2 formation).
+
+Automatic Positioning Algorithm (radek = i // 2, sloupec = i % 2)
+
+Description: Used integer division (//) and the modulo operator (%) to automatically calculate each widget's position. This ensures the player counters dynamically wrap into exactly two columns, no matter how many players are selected.
+
+Dynamic Component Initialization with Parameters
+
+Description: Ran a for loop to create a new Tlacitko instance for each player. Passed specific arguments immediately upon creation, including a unique color from a predefined list and the total number of players (to correctly set the starting health to 20 or 40).
+
+Screen Navigation (setCurrentWidget)
+
+Description: Triggered a layer swap within the QStackedWidget. Once the game board is fully built, it is brought to the front, creating a seamless transition from the main menu directly into the active game state.
+
+Return to Menu Functionality (btn_zpet)
+
+Description: Implemented a UI control to exit the current session. This involved creating a "Back to Menu" button and linking it to logic that will reset the view back to the initial player-selection screen.
