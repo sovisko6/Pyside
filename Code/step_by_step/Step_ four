@@ -1,0 +1,45 @@
+Založení main.py
+
+import sys
+from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QStackedWidget,
+                               QVBoxLayout, QPushButton, QLabel)
+from PySide6.QtCore import Qt
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Počítadlo životů")
+        self.resize(500, 600)
+
+        self.balicek_obrazovek = QStackedWidget()
+        self.setCentralWidget(self.balicek_obrazovek)
+        
+        self.vytvor_menu()
+
+def vytvor_menu(self):
+        menu_widget = QWidget()
+        layout = QVBoxLayout()
+        
+        nadpis = QLabel("Kolik hráčů bude hrát?")
+        nadpis.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        nadpis.setStyleSheet("font-size: 24px; font-weight: bold; margin-bottom: 20px;")
+        layout.addWidget(nadpis)
+ 
+        for pocet in [2, 4, 6]:
+            btn = QPushButton(f"{pocet} Hráči")
+            btn.setStyleSheet("font-size: 30px; padding: 15px; margin: 5px;")
+            # Zde upozorni na 'p=pocet' v lambdě - klasická chyba v Python cyklech
+            btn.clicked.connect(lambda checked, p=pocet: self.spust_hru(p))
+            layout.addWidget(btn)
+        
+        menu_widget.setLayout(layout)
+        self.balicek_obrazovek.addWidget(menu_widget)
+
+    def spust_hru(self, pocet_h):
+        print(f"Spouštím hru pro {pocet_h} hráčů!") # Zatím jen test do konzole
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = MainWindow()
+    okno.show()
+    sys.exit(app.exec())
