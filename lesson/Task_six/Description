@@ -1,0 +1,16 @@
+Task: Session Cleanup & State Reset
+Navigate to Main Menu (setCurrentIndex(0))
+
+Description: Redirects the user back to the initial player-selection screen. 
+By setting the index of the QStackedWidget to 0, the application instantly displays the very first page that was added to the stack (the main menu).
+
+Detach the Active Game Board (removeWidget)
+
+Description: Unlinks the dynamically generated game board (self.hra_widget) from the application's screen manager.
+This ensures the finished game session is no longer a part of the active widget deck.
+
+Memory Management & Garbage Collection (deleteLater)
+
+Description: Safely destroys the old game board widget and frees up system memory. 
+This is a critical step to prevent memory leaks; without it, repeatedly starting and exiting games would keep adding invisible widgets to the RAM, 
+eventually slowing down or crashing the application.
