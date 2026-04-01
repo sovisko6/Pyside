@@ -1,0 +1,22 @@
+setWindowTitle & resize: Sets the application title and defines the initial window dimensions.
+
+QStackedWidget: Creates a container that holds multiple screens (pages) but shows only one at a time.
+
+setCentralWidget: Places the stacked widget as the main content area of the window.
+
+vytvor_menu(): Calls the internal method to build the initial selection screen.
+
+QVBoxLayout: Arranges the title and buttons in a vertical column.
+
+QLabel styling: Creates a centered header with custom CSS for size and spacing.
+
+for pocet in [2, 4, 6]: Iterates through numbers to generate player-count buttons dynamically.
+
+lambda checked, p=pocet: A critical fix for Python loops; it "captures" the current value of pocet so each button remembers its specific number when clicked.
+
+addWidget(menu_widget): Adds the finished menu layout into the QStackedWidget stack.
+
+spust_hru Method (Navigation Logic)
+pocet_h parameter: Receives the number of players passed from the clicked button.
+
+print: Acts as a placeholder for the game initialization logic; in a full app, this would switch the QStackedWidget to the actual game screen.
