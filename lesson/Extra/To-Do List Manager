@@ -1,0 +1,17 @@
+Tasks to Complete:
+Set Up the Main Interface (QListWidget)
+
+Add a QListWidget to the center of your window. This is a new PySide6 component specifically designed to hold rows of text items.
+
+Create the Input Area (QHBoxLayout)
+
+Add a QLineEdit where the user can type a new task, and a QPushButton next to it labeled "Add Task".
+
+Implement the 'Add' Logic
+
+Connect the "Add Task" button so that it reads the text from the input field, creates a new item in the QListWidget,
+and then clears the input field so it's ready for the next task.
+
+Implement the 'Delete' Logic
+
+Add a "Delete Selected" button. Write a function that checks which item in the QListWidget is currently highlighted and removes it from the list.26
