@@ -1,0 +1,8 @@
+Do main přidat poslední funkci 
+
+def zpet_do_menu(self):
+        self.balicek_obrazovek.setCurrentIndex(0)
+        
+        self.balicek_obrazovek.removeWidget(self.hra_widget)
+
+        self.hra_widget.deleteLater()
