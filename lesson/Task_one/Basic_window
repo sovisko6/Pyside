@@ -1,0 +1,17 @@
+#basic window, 
+#Think of this code as the absolute foundation of every PySide application.
+#This is your blank canvas or an empty room. Right now, it does nothing except open a window and keep it running on your screen.
+
+import sys
+from PySide6.QtWidgets import QApplication, QMainWindow
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = MainWindow()
+    okno.show()
+    sys.exit(app.exec())
+
