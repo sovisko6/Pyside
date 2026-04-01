@@ -1,7 +1,5 @@
+setValidator: Restricts input to integers between -999 and 999.
 
-setValidator(QIntValidator(min, max, parent))
-Description: Restricts the QLineEdit to accept only integer values within a specific range (e.g., -999 to 999). 
-It prevents the user from entering letters or symbols that would break the logic.
+textChanged.connect: Triggers aktualizuj_z_textu every time the text is modified.
 
-setAlignment(Qt.AlignmentFlag)
-Description: Controls the visual positioning of the text within the widget. In this case, it centers the number horizontally and vertically for better readability.
+clicked.connect: Links the Plus/Minus buttons to their respective logic functions.
