@@ -1,0 +1,17 @@
+Task Summary: Logic Implementation & Data Validation
+1. Input Validation & Security
+QIntValidator: You implemented a safety layer that restricts user input to integers between -999 and 999. This prevents the application from crashing if a user tries to type letters or symbols.
+
+Error Handling: In aktualizuj_z_textu, you added a check for empty strings or a lone minus sign (-). This is a crucial "fail-safe" that prevents ValueError crashes during the conversion from string to integer.
+
+2. Signal & Slot Connectivity
+You utilized the core Qt mechanism to bridge the UI and the logic:
+
+Button Triggers: Linked the clicked signals of your plus/minus buttons to custom methods (zmacknutiup/zmacknutidown) to modify the score.
+
+Manual Overrides: Connected the textChanged signal so that if a player manually types a number into the box, the internal variable self.i updates instantly.
+
+3. Bidirectional Data Synchronization
+Internal State: You established self.i as the "Single Source of Truth."
+
+UI Updates: You ensured that every time the internal state changes via buttons, the UI (QLineEdit) is refreshed to reflect the new value using setText().
