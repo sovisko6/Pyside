@@ -1,0 +1,23 @@
+#do __init__
+
+self.pocitadlo_vstup.setValidator(QIntValidator(-999, 999, self)) 
+self.pocitadlo_vstup.textChanged.connect(self.aktualizuj_z_textu)
+
+self.btn_plus.clicked.connect(self.zmacknutiup)
+self.btn_minus.clicked.connect(self.zmacknutidown)
+
+
+#do Tlacitko
+
+def aktualizuj_z_textu(self, text):
+        if text == "" or text == "-":
+            return
+        self.i = int(text)
+
+    def zmacknutiup(self):
+        self.i += 1
+        self.pocitadlo_vstup.setText(str(self.i))
+
+    def zmacknutidown(self):
+        self.i -= 1
+        self.pocitadlo_vstup.setText(str(self.i))
