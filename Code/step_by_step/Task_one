@@ -1,0 +1,41 @@
+import sys
+from PySide6.QtWidgets import (QApplication, QWidget, QHBoxLayout, QVBoxLayout, 
+                               QPushButton, QLineEdit, QSizePolicy)
+from PySide6.QtCore import Qt
+
+class Tlacitko(QWidget):
+    def __init__(self, pocet_hracu=2):
+        super().__init__()
+        self.i = 20 if pocet_hracu == 2 else 40
+
+        # Vytvoření prvků
+        self.pocitadlo_vstup = QLineEdit(str(self.i))
+        self.pocitadlo_vstup.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.pocitadlo_vstup.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+
+        self.btn_plus = QPushButton("+")
+        self.btn_minus = QPushButton("-")
+        self.btn_menu = QPushButton("Barva")
+        
+        self.btn_plus.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.btn_minus.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.btn_menu.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+
+        # Skládání do layoutů
+        pravy_layout = QVBoxLayout()
+        pravy_layout.addWidget(self.btn_plus)
+        pravy_layout.addWidget(self.btn_minus)
+        pravy_layout.addWidget(self.btn_menu)
+
+        hlavni_layout = QHBoxLayout()
+        hlavni_layout.addWidget(self.pocitadlo_vstup, 7) 
+        hlavni_layout.addLayout(pravy_layout, 3)        
+
+        self.setLayout(hlavni_layout)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    okno = Tlacitko()
+    okno.resize(400, 200)
+    okno.show()
+    sys.exit(app.exec())
