@@ -36,8 +36,7 @@ def vytvor_menu(self):
         self.balicek_obrazovek.addWidget(menu_widget)
 
     def spust_hru(self, pocet_h):
-        print(f"Spouštím hru pro {pocet_h} hráčů!") # Zatím jen test do konzole
-
+        print(f"Spouštím hru pro {pocet_h} hráčů!")
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     okno = MainWindow()
