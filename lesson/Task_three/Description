@@ -1,1 +1,34 @@
+Task: UI Personalization & Menu Implementation
+Assign Unique Object Identity (setObjectName)
 
+Description: Assigned a specific ID ("HlavniPozadi") to the main widget. This acts as a CSS selector, allowing the stylesheet to target the main background specifically without accidentally restyling the buttons or text fields.
+
+Implement Contextual Dropdown Menu (QMenu)
+
+Description: Created a popup menu container to house multiple user choices. This prevents the UI from being cluttered with too many buttons by hiding options inside a single menu.
+
+Configure Dynamic Menu Actions (addAction)
+
+Description: Populated the menu with selectable color options ("Červená", "Modrá", etc.). Used Lambda functions to pass specific hex color codes or names to the coloring logic whenever a user selects an item.
+
+Link Menu to Control Button (setMenu)
+
+Description: Attached the created QMenu to the existing btn_menu. This converts the button into a dropdown trigger, enabling a cleaner and more professional user interaction.
+
+Develop Background Customization Logic (zmen_barvu)
+
+Description: Created a custom method to handle visual updates. It accepts a color string and applies it to the UI, ensuring the internal state of the theme stays synchronized with the user's choice.
+
+Enable Custom Background Rendering (setAttribute)
+
+Description: Enabled the WA_StyledBackground attribute. This is a technical requirement for QWidget subclasses to ensure they correctly render background colors defined via CSS (Stylesheets) rather than the default system theme.
+
+Apply Global Styling and Branding (setStyleSheet)
+
+Description: Injected a block of CSS-like code to define the application's "Look and Feel." This includes:
+
+Typography: Setting large, bold fonts (70px) for the score.
+
+Transparency: Using rgba colors for a modern, semi-transparent look.
+
+Shape: Implementing border-radius to create rounded corners for a sleek, modern interface.
