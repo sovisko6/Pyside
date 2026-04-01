@@ -1,0 +1,19 @@
+setObjectName: Assigns a unique ID (HlavniPozadi) to the widget, used as a selector for the CSS-style coloring.
+
+QMenu: Creates a dropdown menu containing color options (Red, Blue, Green, Gray).
+
+addAction with lambda: Connects each menu item to the zmen_barvu function, passing a specific color code as an argument.
+
+setMenu: Attaches the created menu to the btn_menu button.
+
+self.zmen_barvu("gray"): Sets the default background color to gray when the application starts.
+
+Methods (Logic)
+zmen_barvu:
+
+Enables background styling for the widget.
+
+Applies a StyleSheet (CSS) that dynamically changes the window background and sets fixed styles
+for all QLineEdit (large bold text) and QPushButton (rounded corners and semi-transparent white background) elements.
+
+
