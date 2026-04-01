@@ -1,0 +1,21 @@
+Na začetek __init__ 
+self.setObjectName("HlavniPozadi")
+
+A do __init__ 
+menu = QMenu(self) 
+        menu.addAction("Červená", lambda *args: self.zmen_barvu("#8b0000"))
+        menu.addAction("Modrá", lambda *args: self.zmen_barvu("#00008b"))
+        menu.addAction("Zelená", lambda *args: self.zmen_barvu("#006400"))
+        menu.addAction("Šedá", lambda *args: self.zmen_barvu("gray"))
+        
+        self.btn_menu.setMenu(menu)
+        self.zmen_barvu("gray")
+
+a na konec 
+def zmen_barvu(self, barva):
+        self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
+        self.setStyleSheet(f"""
+            #HlavniPozadi {{ background-color: {barva}; }}
+            QLineEdit {{ background-color: rgba(255, 255, 255, 220); color: black; font-size: 70px; font-weight: bold; border-radius: 10px; }}
+            QPushButton {{ background-color: rgba(255, 255, 255, 220); color: black; font-size: 24px; font-weight: bold; border-radius: 5px; }}
+        """)
