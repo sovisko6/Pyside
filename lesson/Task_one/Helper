@@ -1,7 +1,8 @@
 
 ### Core Components
 * **QWidget**
-    The base class for all UI objects. It is a generic, empty container. Every visual element—from a single button to the entire main window—is technically a widget.
+    The base class for all UI objects. It is a generic, empty container. 
+    Every visual element—from a single button to the entire main window—is technically a widget.
 
 ### Layout Managers
 Layouts are invisible containers that automatically handle the positioning and resizing of your widgets.
@@ -22,4 +23,5 @@ Layouts are invisible containers that automatically handle the positioning and r
 
 ### Sizing & Responsiveness
 * **setSizePolicy(...)**
-    Defines how a widget behaves when the window is resized. This ensures that buttons or text fields dynamically expand and fill available space instead of remaining at a fixed size.
+    Defines how a widget behaves when the window is resized. 
+    This ensures that buttons or text fields dynamically expand and fill available space instead of remaining at a fixed size.
