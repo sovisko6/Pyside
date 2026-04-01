@@ -1,0 +1,25 @@
+
+### Core Components
+* **QWidget**
+    The base class for all UI objects. It is a generic, empty container. Every visual element—from a single button to the entire main window—is technically a widget.
+
+### Layout Managers
+Layouts are invisible containers that automatically handle the positioning and resizing of your widgets.
+
+* **QHBoxLayout**
+    Arranges widgets horizontally (side-by-side) in a linear row.
+* **QVBoxLayout**
+    Arranges widgets vertically (stacked) in a linear column.
+
+### Key Methods
+* **addWidget(widget, stretch)**
+    Adds a specific UI element (like a button or input field) to a layout.
+    * The **stretch** integer defines how much space a widget takes relative to others (e.g., using 7 and 3 makes one widget take up 70% of the space).
+* **addLayout(layout, stretch)**
+    Used for nesting layouts. This allows you to place a horizontal row of buttons inside a vertical column of text fields.
+* **setLayout(layout)**
+    The final step for your main class. It instructs the widget to use a specific layout to organize its children.
+
+### Sizing & Responsiveness
+* **setSizePolicy(...)**
+    Defines how a widget behaves when the window is resized. This ensures that buttons or text fields dynamically expand and fill available space instead of remaining at a fixed size.
