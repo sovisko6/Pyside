@@ -1,0 +1,22 @@
+App Challenge 1: The Classic Calculator7257
+
+Tasks to Complete:
+Construct the Display (QLineEdit)
+
+Make a text field at the top that is read-only so the user can only change it by clicking the buttons.
+
+Build the Number Pad (QGridLayout)
+
+Use a loop to generate buttons for numbers 0-9 and arrange them in a classic 3x3 grid (with 0 at the bottom).
+
+Implement Math Operators (QPushButton)
+
+Create buttons for +, -, *, /, and =. Place them in the grid or in a separate vertical layout next to the numbers.
+
+String Concatenation Logic
+
+Connect the number buttons so that clicking them adds that number to the end of the text in the display (e.g., clicking "1" then "5" makes "15").
+
+Evaluation Engine (eval())
+
+When the = button is clicked, take the string from the display (like "15+5"), calculate the math, and update the display with the result.
