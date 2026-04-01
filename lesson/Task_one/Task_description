@@ -1,11 +1,31 @@
-### Phase 1: Building a Custom Widget (The Foundation)
-Our first goal is to create an independent building block
+Task Summary: Interactive Counter Widget
+1. Library Integration
+Imported PySide6, the Python framework for Qt, to build a cross-platform graphical user interface (GUI).
 
-Task:
-- [ ] Create a new file named "Tlacitko.py".
-- [ ] Set up the "Tlacitko" class inheriting from "QWidget".
-- [ ] Initialize the parent class using "super().__init__()".
-- [ ] Create the UI elements: One "QLineEdit" (for the number) and three "QPushButton"s (+, -, and Color).
-- [ ] Arrange the layout: Put the three buttons in a "QVBoxLayout" (vertical column).
-- [ ] Create a main "QHBoxLayout" (horizontal) and divide the space: 70% for the text field, 30% for the vertical button layout.
-- [ ] Apply the main layout to the widget using "self.setLayout()".
+Utilized specific widgets like QLineEdit for display and QPushButton for user interaction.
+
+2. Dynamic Logic Initialization
+Created a custom class Tlacitko inheriting from QWidget.
+
+Implemented a conditional starting value: the counter defaults to 20 for a 2-player game and 40 for other formats, showing you've planned for different game modes.
+
+3. UI Component Construction
+Display: Added a QLineEdit to show the current number, centered the text, and set it to expand to fill available space.
+
+Controls: Created three buttons:
+
++ (Plus) for incrementing.
+
+- (Minus) for decrementing.
+
+Barva (Color) intended for UI customization or player identification.
+
+4. Advanced Layout Management
+Nested Layouts: Used a QVBoxLayout (vertical) for the buttons and nested it inside a QHBoxLayout (horizontal) to sit alongside the display.
+
+Proportional Scaling: Used stretch factors (7 for the input, 3 for the buttons) to ensure the display takes up 70% of the width while the buttons take up 30%.
+
+Size Policies: Set Expanding policies so the elements grow or shrink smoothly if the window is resized.
+
+5. Application Lifecycle
+Established the standard if __name__ == "__main__": entry point to initialize the QApplication, set an initial window size (400x200), and start the event loop.
