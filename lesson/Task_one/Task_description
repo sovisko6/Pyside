@@ -2,10 +2,10 @@
 Our first goal is to create an independent building block
 
 Task:
-- [ ] Create a new file named `Tlacitko.py`.
-- [ ] Set up the `Tlacitko` class inheriting from `QWidget`.
-- [ ] Initialize the parent class using `super().__init__()`.
-- [ ] Create the UI elements: One `QLineEdit` (for the number) and three `QPushButton`s (+, -, and Color).
-- [ ] Arrange the layout: Put the three buttons in a `QVBoxLayout` (vertical column).
-- [ ] Create a main `QHBoxLayout` (horizontal) and divide the space: 70% for the text field, 30% for the vertical button layout.
-- [ ] Apply the main layout to the widget using `self.setLayout()`.
+- [ ] Create a new file named "Tlacitko.py".
+- [ ] Set up the "Tlacitko" class inheriting from "QWidget".
+- [ ] Initialize the parent class using "super().__init__()".
+- [ ] Create the UI elements: One "QLineEdit" (for the number) and three "QPushButton"s (+, -, and Color).
+- [ ] Arrange the layout: Put the three buttons in a "QVBoxLayout" (vertical column).
+- [ ] Create a main "QHBoxLayout" (horizontal) and divide the space: 70% for the text field, 30% for the vertical button layout.
+- [ ] Apply the main layout to the widget using "self.setLayout()".
