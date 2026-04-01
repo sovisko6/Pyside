@@ -1,0 +1,28 @@
+Nahoru do importů:
+from PySide6.QtWidgets import QGridLayout
+from Tlacitko import Tlacitko
+
+Přepiš metodu spust_hru:
+
+def spust_hru(self, pocet_h):
+        self.hra_widget = QWidget() 
+        hlavni_layout = QVBoxLayout()
+       
+        mrizka = QGridLayout()
+        seznam_barev = ["#d9534f", "#5cb85c", "#0275d8", "#f0ad4e", "#9c27b0", "#00bcd4"]
+
+        for i in range(pocet_h):
+            novy_blok = Tlacitko(barva=seznam_barev[i], pocet_hracu=pocet_h)
+            radek = i // 2   
+            sloupec = i % 2  
+            mrizka.addWidget(novy_blok, radek, sloupec)
+
+        hlavni_layout.addLayout(mrizka)
+
+        btn_zpet = QPushButton("Zpět do menu")
+        btn_zpet.clicked.connect(self.zpet_do_menu)
+        hlavni_layout.addWidget(btn_zpet)
+        
+        self.hra_widget.setLayout(hlavni_layout)
+        self.balicek_obrazovek.addWidget(self.hra_widget)
+        self.balicek_obrazovek.setCurrentWidget(self.hra_widget)
