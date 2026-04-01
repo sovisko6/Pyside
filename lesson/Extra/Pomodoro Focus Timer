@@ -1,0 +1,19 @@
+Initialize the Time Engine (QTimer)
+
+Import and set up a QTimer. This is a PySide6 tool that triggers a function automatically every second (or any interval you choose).
+
+Create the Time Display (QLabel)
+
+Make a large, centered label that starts by displaying "25:00" (for a 25-minute focus session).
+
+Build the Controls (QHBoxLayout)
+
+Create three buttons: "Start", "Pause", and "Reset".
+
+State Management Logic
+
+Connect "Start" to begin the QTimer. Connect "Pause" to stop it. Connect "Reset" to change the time back to 25:00 and stop the timer.
+
+Countdown Math
+
+Write a function that triggers every time the QTimer ticks (every 1 second). This function needs to subtract 1 second from the total time, format it back into "Minutes:Seconds", and update the QLabel.
