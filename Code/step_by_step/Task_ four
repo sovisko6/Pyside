@@ -1,9 +1,11 @@
 Založení main.py
 
 import sys
-from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QStackedWidget,
-                               QVBoxLayout, QPushButton, QLabel)
+from PySide6.QtWidgets import (QMainWindow, QWidget, QStackedWidget,
+                               QVBoxLayout, QGridLayout, QPushButton, QLabel)
 from PySide6.QtCore import Qt
+from Tlacitko import Tlacitko
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
