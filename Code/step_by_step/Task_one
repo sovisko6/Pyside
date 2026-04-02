@@ -1,7 +1,8 @@
-import sys
 from PySide6.QtWidgets import (QApplication, QWidget, QHBoxLayout, QVBoxLayout, 
-                               QPushButton, QLineEdit, QSizePolicy)
+                               QPushButton, QLineEdit, QMenu, QSizePolicy)
+from PySide6.QtGui import QIntValidator
 from PySide6.QtCore import Qt
+import sys
 
 class Tlacitko(QWidget):
     def __init__(self, pocet_hracu=2):
