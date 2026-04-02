@@ -14,7 +14,7 @@ macOS / Linux: source venv/bin/activate
 
 3. Install Your Tools
 Now that you see (venv) in your terminal, any library you install stays inside this project.
-command: pip install PySide6
+command: pip install pyside6
 
 4. Leave the Environment
 When you are done working, just type:
