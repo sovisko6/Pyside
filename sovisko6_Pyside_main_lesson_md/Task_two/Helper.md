@@ -1,0 +1,5 @@
+# Task Two — Helper
+
+- **`setValidator`:** Restricts input to integers between -999 and 999.
+- **`textChanged.connect`:** Triggers `aktualizuj_z_textu` every time the text is modified.
+- **`clicked.connect`:** Links the Plus/Minus buttons to their respective logic functions.
